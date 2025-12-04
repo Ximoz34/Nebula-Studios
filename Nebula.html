@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NebulaPlay Studios — Carrières</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* CSS complet réintégré */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #7c3aed;
+      --primary-light: #a78bfa;
+      --primary-dark: #6d28d9;
+      --accent: #06b6d4;
+      --accent-light: #22d3ee;
+      --bg: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-tertiary: #334155;
+      --text: #f1f5f9;
+      --text-muted: #cbd5e1;
+      --success: #10b981;
+      --border: #475569;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, #1a1f3a 50%, #0f172a 100%);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 20s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -30%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 25s ease-in-out infinite reverse;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(30px, -30px); }
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+      padding: 28px 24px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+   
+    }
+
+    .title h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .title p {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+
+    .btn-ghost:hover {
+      color: var(--accent-light);
+      background: rgba(6, 182, 212, 0.1);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 24px rgba(124, 58, 237, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(124, 58, 237, 0.4);
+    }
+
+    main { max-width: 1200px; margin: 0 auto; padding: 60px 24px; }
+    .container { display: grid; gap: 40px; }
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+
+    .card {
+      background: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.4s ease;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .card:hover {
+      border-color: rgba(124, 58, 237, 0.3);
+      background: rgba(30,41,59,0.8);
+      transform: translateY(-4px);
+    }
+
+    h2, h3 { font-family: 'Poppins'; font-weight:700; margin-bottom:16px; }
+    h2 { font-size:32px; }
+    h3 { font-size:24px; }
+    p { color: var(--text-muted); margin-bottom:16px; }
+
+    .meta-row { display:grid; grid-template-columns:repeat(3,1fr); padding:16px 0; border-top:1px solid rgba(148,163,184,0.1); border-bottom:1px solid rgba(148,163,184,0.1); }
+    .meta-row div { font-size:13px; color:var(--text-muted); }
+
+    ul { list-style:none; }
+    li { padding-left:24px; position:relative; color:var(--text-muted); }
+    li::before { content:'→'; position:absolute; left:0; color:var(--primary-light); }
+
+    .hero-right { display:flex; flex-direction:column; gap:20px; }
+
+    footer { text-align:center; padding:40px 24px; color:var(--text-muted); }
+
+    @media(max-width:768px){ .hero { grid-template-columns:1fr; } .meta-row { grid-template-columns:1fr; } }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <!-- Remplacement du placeholder par votre logo -->
+      <img src="Logo.jpg" style="width: 80px; height: 80px; border-radius: 5px; " />
+      <div class="title">
+        <h1>NebulaPlay Studios</h1>
+        <p>Martinique — Jeux vidéo narratifs</p>
+      </div>
+    </div>
+
+    <nav>
+      <a class="btn-ghost" href="#about">À propos</a>
+      <a class="btn-ghost" href="#job">Offre</a>
+      <a class="btn-primary" href="mailto:jobs@nebulaplay-studios.com">Postuler</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="card">
+          <div class="company-meta">
+            <div class="badge">Studio • Martinique</div>
+            <div>Multiplateforme • Narratif • Artistique</div>
+          </div>
+
+          <h2 id="about">NebulaPlay Studios</h2>
+          <p>
+            NebulaPlay Studios est un jeune studio français spécialisé dans la création de jeux vidéo immersifs et narratifs. Nous développons des expériences multiplateformes en mettant l'accent sur l'innovation, le gameplay intuitif et l'excellence artistique.
+          </p>
+
+          <p>
+            Notre équipe réunit des passionnés du game design, de l'animation et des nouvelles technologies, avec la volonté de proposer au public des univers forts en émotions et accessibles à tous.
+          </p>
+        </div>
+
+        <div style="height: 32px;"></div>
+
+        <div class="card">
+          <h3 id="job">Game Designer (H/F)</h3>
+          <div class="meta-row">
+            <div>💼 CDI • Temps plein</div>
+            <div>📍 Martinique / Télétravail hybride</div>
+            <div>💰 38k - 48k€</div>
+          </div>
+
+          <div class="job">
+            <div>
+              <div class="section-title">Contexte du poste</div>
+              <p>Dans le cadre du développement de notre prochain jeu narratif d'action‑aventure, NebulaPlay Studios recherche un(e) Game Designer talentueux(se) et motivé(e).</p>
+            </div>
+
+            <div>
+              <div class="section-title">Missions principales</div>
+              <ul>
+                <li>Concevoir des mécaniques de gameplay innovantes</li>
+                <li>Réaliser la documentation de design</li>
+                <li>Collaborer avec les programmeurs et artistes</li>
+                <li>Concevoir et équilibrer les niveaux</li>
+                <li>Participer aux playtests</li>
+                <li>Assurer la cohérence creative du jeu</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="section-title">Profil recherché</div>
+              <ul>
+                <li>1 à 3 ans d'expérience en Game Design</li>
+                <li>Connaissance Unity ou Unreal</li>
+                <li>Vision gameplay claire</li>
+                <li>Sensibilité artistique</li>
+                <li>Rigueur, créativité, autonomie</li>
+                <li>Bonus : scripting, UX, Level Design</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="section-title">Ce que nous offrons</div>
+              <ul>
+                <li>Environnement bienveillant</li>
+                <li>Télétravail jusqu'à 3 jours/semaine</li>
+                <li>Primes et matériel fourni</li>
+                <li>Ateliers créatifs</li>
+              </ul>
+            </div>
+
+            <div class="button-group">
+              <a class="btn-primary" href="mailto:jobs@nebulaplay-studios.com?subject=Candidature%20-%20Game%20Designer">Postuler par e‑mail</a>
+              <button class="btn-ghost" onclick="window.print()" style="flex: 1;">📥 Télécharger (PDF)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card">
+          <h4>Pourquoi rejoindre NebulaPlay ?</h4>
+          <p>Tu participeras à un projet ambitieux mêlant narration forte et mécaniques originales.</p>
+        </div>
+
+        <div class="card">
+          <h5>📍 Localisation</h5>
+          <p>Basé à Schoelcher — bureau hybride + télétravail possible.</p>
+        </div>
+
+        <div class="card">
+          <h5>✉️ Contact</h5>
+          <p><a href="mailto:jobs@nebulaplay-studios.com" style="color: var(--accent-light); text-decoration: none;">jobs@nebulaplay-studios.com</a></p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    © <strong>NebulaPlay Studios</strong> — Tous droits réservés • <a href="mailto:jobs@nebulaplay-studios.com" style="color: var(--text-muted); text-decoration: none;">Rejoignez-nous</a>
+  </footer>
+</body>
+</html>
